@@ -1,0 +1,8 @@
+graph TD
+    A[User / Client] --> B[Ingress Controller]
+    B --> C["Service (LoadBalancer / ClusterIP)"]
+    C --> D[Pods]
+    D -->|Containers| E[App Container]
+    D -->|Sidecar| F[Logging / Monitoring]
+    C -.-> G[ConfigMap / Secret]
+    D -.-> H[Persistent Volume]
